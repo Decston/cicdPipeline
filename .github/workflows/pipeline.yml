@@ -1,13 +1,13 @@
 name: CI/CD Pipeline
 
 on:
-push:
-branches:
-  - main
+  push:
+    branches:
+      - main
 
 jobs:
-build-and-push:
-runs-on: ubuntu-latest
+  build-and-push:
+    runs-on: ubuntu-latest
 
 steps:
   - name: Checkout código
@@ -17,13 +17,13 @@ steps:
     run: docker login -u ${{ secrets.DOCKER_USER }} -p ${{ secrets.DOCKER_PASS }}
 
   - name: Build backend
-    run: docker build -t Decston/backend:latest ./backend
+    run: docker build -t decston/backend:latest ./backend
 
   - name: Build frontend
-    run: docker build -t Decston/frontend:latest ./frontend
+    run: docker build -t decston/frontend:latest ./frontend
 
   - name: Push backend
-    run: docker push Decston/backend:latest
+    run: docker push decston/backend:latest
 
   - name: Push frontend
-    run: docker push Decston/frontend:latest
+    run: docker push decston/frontend:latest
