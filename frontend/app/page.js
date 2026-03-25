@@ -1,0 +1,18 @@
+async function getMessage() {
+  const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/hello`, {
+    cache: "no-store"
+  });
+
+  return res.text();
+}
+
+export default async function Home() {
+  const message = await getMessage();
+
+  return (
+    <main style={{ textAlign: "center", marginTop: "50px" }}>
+      <h1>Geração Tech</h1>
+      <h2>{message}</h2>
+    </main>
+  );
+}
