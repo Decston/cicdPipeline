@@ -2,13 +2,12 @@ name: CI/CD Pipeline
 
 on:
 push:
-branches: [ "main" ]
+branches: ["main"]
 
 jobs:
 build-and-push:
 runs-on: ubuntu-latest
 
-```
 steps:
   - name: Checkout código
     uses: actions/checkout@v3
@@ -17,14 +16,13 @@ steps:
     run: docker login -u ${{ secrets.DOCKER_USER }} -p ${{ secrets.DOCKER_PASS }}
 
   - name: Build backend
-    run: docker build -t seuusuario/backend:latest ./backend
+    run: docker build -t Decston/backend:latest ./backend
 
   - name: Build frontend
-    run: docker build -t seuusuario/frontend:latest ./frontend
+    run: docker build -t Decston/frontend:latest ./frontend
 
   - name: Push backend
-    run: docker push seuusuario/backend:latest
+    run: docker push Decston/backend:latest
 
   - name: Push frontend
-    run: docker push seuusuario/frontend:latest
-```
+    run: docker push Decston/frontend:latest
