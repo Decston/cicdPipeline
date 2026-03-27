@@ -1,4 +1,5 @@
 import PipelineSimulator from "@/src/components/PipelineSimulator";
+import DevWorkflow from "@/src/components/DevWorkflow";
 
 async function getMessage() {
   const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/hello`, {
@@ -13,10 +14,11 @@ export default async function Home() {
 
   return (
     <main style={{ textAlign: "center", marginTop: "50px" }}>
-      <h1>Geração Tech</h1>
+      <DevWorkflow />
+      {/*<h1>Geração Tech</h1>
       <h2>{message}</h2>
       <h1>-----------</h1>
-      <PipelineSimulator />
+      <PipelineSimulator />*/}
     </main>
   );
 }
