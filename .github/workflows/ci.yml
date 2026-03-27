@@ -1,0 +1,19 @@
+name: CI Pipeline
+
+on:
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout código
+        uses: actions/checkout@v3
+
+      - name: Build backend
+        run: docker build -t test-backend ./backend
+
+      - name: Build frontend
+        run: docker build -t test-frontend ./frontend
