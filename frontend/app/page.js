@@ -1,3 +1,5 @@
+import PipelineSimulator from "@/src/components/PipelineSimulator";
+
 async function getMessage() {
   const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/hello`, {
     cache: "no-store"
@@ -13,6 +15,8 @@ export default async function Home() {
     <main style={{ textAlign: "center", marginTop: "50px" }}>
       <h1>Geração Tech</h1>
       <h2>{message}</h2>
+      <h1>-----------</h1>
+      <PipelineSimulator />
     </main>
   );
 }
