@@ -5,7 +5,7 @@ import PipelineSimulator from "@/src/components/PipelineSimulator";
 test("renderiza botão de executar pipeline", () => {
     render(<PipelineSimulator />);
 
-    const button = screen.getByText("Executar Pipeline");
+    const button = screen.getByText("SEM BOTAO");
 
     expect(button).toBeInTheDocument();
 });
