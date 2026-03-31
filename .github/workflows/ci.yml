@@ -6,11 +6,23 @@ on:
       - main
 
 jobs:
-  build:
+  build-and-test:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout código
         uses: actions/checkout@v3
+      
+      - name: Testes Backend
+        run: |
+          chmod +x ./backend/mvnw
+          cd backend
+          ./mvnw test
+
+      - name: Teste Frontend
+        run: |
+          cd frontend
+          npm install
+          npm run test
 
       - name: Build backend
         run: docker build -t test-backend ./backend
