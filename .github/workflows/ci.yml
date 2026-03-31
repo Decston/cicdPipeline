@@ -14,6 +14,7 @@ jobs:
       
       - name: Testes Backend
         run: |
+          chmod +x ./backend/mvnw
           cd backend
           ./mvnw test
 
