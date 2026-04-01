@@ -14,13 +14,13 @@ export default async function Home() {
 
   return (
     <main style={{ textAlign: "center", marginTop: "50px" }}>
-      {/*<DevWorkflow />*/}
-      {<>
+      {<DevWorkflow />}
+      {/*<>
         <h1>Geração Tech</h1>
         <h2>{message}</h2>
         <h1>-----------</h1>
       </>}
-      {<PipelineSimulator />}
+      {<PipelineSimulator />*/}
     </main>
   );
 }
